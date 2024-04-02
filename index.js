@@ -25,8 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent = `
+      certificateContent.innerHTML = `
+      <h1>${}
       <h3>${studentName}</h3>
+      <img src='logo.png'>
     `;
     
       //  Display the modal
@@ -39,9 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal ('click', function () {
-      const closeModal = getElementById('modal');
-      closeModal.textContent = modal;
+    closeModal.addEventListener('click', function () {
+     modal.style.display = 'none';
     });
   });
   
