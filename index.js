@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
+//executes when DOMCL has completely loaded and parsed
+document.addEventListener('DOMContentLoaded', function () { 
+    //retrieves elements from HTML 
     const cardForm = document.getElementById('cardForm');
     const modal = document.getElementById('modal');
     const certificateContent = document.getElementById('certificateContent');
@@ -7,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide the modal initially
     modal.style.display = 'none';
   
+    //prevents default submission from occuring
     cardForm.addEventListener('submit', function (e) {
       e.preventDefault();
   
@@ -14,14 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
       const studentNameInput = document.getElementById('studentName');
       const personalMessageInput = document.getElementById('personalMessage');
       const courseNameInput = document.getElementById('courseName'); 
-  
+     
+      //retrieves values entered by user 
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
-      const courseName = courseNameInput.value; // Fallback to "a course" if no input
+      const courseName = courseNameInput.value ? courseNameInput.value: "a course"; // Fallback to "a course" if no input
   
+      //checks if the variables are empty or contain only whitespace characters
       if (studentName.trim() === '' || personalMessage.trim() === '') {
         alert('Please fill in all fields');
-        return;
+        return; //stops further execution of script
       }
   
       // 🚨 Generate certificate content dynamically
