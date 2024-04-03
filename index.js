@@ -35,18 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
       <p>This is to certify that<p>
       <h3>${studentName}</h3>
       <p>has almost completed the</p>
-      <h3>${personalMessage}</p>
-      <p>with legendary preserverance and world-class assery for never giving up<p>
       <h3>${courseName}</h3>
+      <p>with legendary preserverance and world-class assery for never giving up<p>
       <img src="logo.png" alt="steal" style="margin-top:20px; max-height:100px; width:100px">
+      <p>${personalMessage}</p>
     `;
-
-    //append personalised message after the logo
-    const logo = certificateContent.querySelector('img');
-    const messageParagraph = document.createElement('p');
-    messageParagraph.textContent = personalMessage;
-    certificateContent.insertBefore(messageParagraph, logo.nextSibling);  
-    
     
       //  Display the modal
       modal.style.display = 'block';
