@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
-      const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
+      const courseName = courseNameInput.value; // Fallback to "a course" if no input
   
       if (studentName.trim() === '' || personalMessage.trim() === '') {
         alert('Please fill in all fields');
@@ -26,10 +26,22 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // 🚨 Generate certificate content dynamically
       certificateContent.innerHTML = `
-      <h1>${}
+      <h1>Certificate of Achievement</h1>
+      <p>This is to certify that<p>
       <h3>${studentName}</h3>
-      <img src='logo.png'>
+      <p>has almost completed the</p>
+      <h3>${personalMessage}</p>
+      <p>with legendary preserverance and world-class assery for never giving up<p>
+      <h3>${courseName}</h3>
+      <img src="logo.png" alt="steal" style="margin-top:20px; max-height:100px; width:100px">
     `;
+
+    //append personalised message after the logo
+    const logo = certificateContent.querySelector('img');
+    const messageParagraph = document.createElement('p');
+    messageParagraph.textContent = personalMessage;
+    certificateContent.insertBefore(messageParagraph, logo.nextSibling);  
+    
     
       //  Display the modal
       modal.style.display = 'block';
@@ -42,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     //  🚨 Close the modal when the close button is clicked
     closeModal.addEventListener('click', function () {
-     modal.style.display = 'none';
+      modal.style.display = 'none';
+  
     });
   });
   
