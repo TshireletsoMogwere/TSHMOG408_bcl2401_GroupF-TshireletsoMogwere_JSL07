@@ -38,7 +38,7 @@
       <h3>${courseName}</h3>
       <p>with legendary preserverance and world-class assery for never giving up &#127942</p>
       <img src="logo.png" style="margin-top: 20px; max-height: 100px;">
-      <p>${personalMessage}</p>
+      <p>${personalMessage} &#x1F63B</p>
     `;
     
 //  Display the modal
